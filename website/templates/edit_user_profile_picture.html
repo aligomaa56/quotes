@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block body %}
+
+<div class="container">
+  <form
+    action="/edit/profile/{{user.id}}/profile_picture/"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input
+      type="file"
+      id="img"
+      name="profile_picture"
+      accept="image/*"
+      class="form-control"
+    />
+    <br />
+    <input type="submit" class="btn btn-primary form-control" />
+  </form>
+  <br /><br /><br />
+  <h3>Your Profile Photo</h3>
+  {% if user.profile_picture %}
+  <img
+    src="/static/images/{{user.profile_picture}}"
+    alt="Avatar Image"
+    style="border-radius: 50%; width: 150px; height: 150px"
+  />
+  <a
+    href="/edit/profile/{{user.id}}/remove_profile_picture/"
+    class="btn btn-sm btn-outline-primary"
+    >Remove Profile Photo</a
+  >
+  {% else %}
+  <img
+    src="/static/images/default_profile_photo.jpg"
+    alt="Avatar Image"
+    style="border-radius: 50%; width: 150px; height: 150px"
+  />
+  {% endif %}
+</div>
+
+{% endblock %}

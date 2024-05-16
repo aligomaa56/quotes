@@ -1,0 +1,76 @@
+{% extends 'base.html' %} {% block extra_css %}
+<link rel="stylesheet" href="static/fade_in.css" />
+{% endblock %} {% block body %}
+<div class="signup-page">
+  <br /><br />
+  <h1>Git In Touch</h1>
+  <form action="" method="post">
+    <table class="signup-table">
+      <tr>
+        <td class="signup-boxes">
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            class="form-control"
+            value="{{form_first_name}}"
+          />
+        </td>
+        <td class="signup-boxes">
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            class="form-control"
+            value="{{form_last_name}}"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="signup-boxes">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="form-control"
+            value="{{form_email}}"
+          />
+        </td>
+        <td class="signup-boxes">
+          <input
+            type="password"
+            name="password1"
+            placeholder="Create a Password"
+            class="form-control"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="signup-boxes" colspan="2">
+          <input
+            type="password"
+            name="password2"
+            placeholder="Type password again for confirmation"
+            class="form-control"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="signup-boxes" colspan="2">
+          <input
+            type="submit"
+            class="btn btn-primary form-control signup-boxes"
+            value="Sign Up"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td class="signup-boxes" colspan="2">
+          <a href="/" class="form-text">Back to Sign In page</a>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+{% endblock %}

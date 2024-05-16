@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="static/fade_in.css">
+{% endblock %}
+
+{% block body %}
+<table class="login-table">
+  <tr>
+    <td class="login-th">
+      <h1 style="font-size: 500%;">Quotes</h1>
+      <h6>
+        Inspire Now
+      </h6>
+    </td>
+    
+    <td class="login-th">
+      <div class="input-group mb-3">
+        <form action="" method="post">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            class="form-control"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            class="form-control"
+          />
+          <span class="d-grid gap-2">
+            <input type="submit" class="btn btn-primary form-control" value="Log In" />
+          </span>
+        </form>
+        </form>
+        
+      </div>
+      <p class="form-text">Don't have an account?
+      <a href="sign-up" class="form-text" style="color:black">Sign Up</a></p>
+
+    </td>
+  </tr>
+</table>
+{% endblock %}

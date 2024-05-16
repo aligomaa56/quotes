@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {%block body%}<br /><br />
+{% if error %}
+<div class="container">
+  <h1>{{error}}</h1>
+</div>
+{%else%}
+<div class="container">
+  <h1>Error 404</h1>
+</div>
+{%endif%} {%endblock%}
