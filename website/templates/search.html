@@ -1,25 +1,67 @@
 {% extends 'base.html' %} {% block body %}
+
+<style >
+  .custom-search-input {
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 0;
+  }
+
+  .custom-search-input:focus {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    box-shadow: none;
+    border-color: white;
+  }
+
+  .custom-search-button {
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.607);
+    border-radius: 0;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+
+  .custom-search-button:hover {
+    color: #ffffff;
+  }
+
+  .custom-search-group {
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+</style>
+
 <div class="container">
-    <form action="" method="post">
-        <div class="input-group mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search..."
-            aria-label="Search"
-            aria-describedby="button-addon2"
-            name="search"
-          />
-          <input
-            class="btn btn-outline-primary"
-            type="submit"
-            id="button-addon2"
-            value="Search"
-          >
-    
-          </button>
-        </div>
-      </form>
+  <form action="" method="post" class="custom-search-form">
+    <div class="input-group mb-3 custom-search-group">
+      <input
+        type="text"
+        class="form-control custom-search-input"
+        aria-label="Search"
+        aria-describedby="button-addon2"
+        name="search"
+      />
+      <button
+        class="btn custom-search-button"
+        type="submit"
+        id="button-addon2"
+      >
+        Search
+      </button>
+    </div>
+  </form>
     
   <h2>Showing results for "{{query}}"</h2>
   <h3>Users</h3>
@@ -34,7 +76,6 @@
   <div class="border" style="border-radius: 10px; padding: 5px">
     <small><a href="/profile/{{user.id}}" style="color: #6e8898; text-decoration: none;">{{ user.first_name }} {{ user.last_name }}</a></small>
 
-    <h5><strong><a href="/post/{{post.id}}" style="color:black;">{{ post.title }}</a></strong></h5>
     <p>{{ post.data }}</p>
     {% if current_user.id == post.user_id %}
     {% else %}{% endif %}
