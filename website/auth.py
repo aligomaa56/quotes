@@ -97,7 +97,7 @@ def allowed_file(filename):
 @login_required
 def remove_user_profile_picture(id):
     user = User.query.get(id)
-    path = "website/static/profile_pictures/" + user.profile_picture
+    path = "website/static/images/" + user.profile_picture
     if user.profile_picture != "default_profile_photo.jpg":
         if os.path.exists(path):
             os.remove(path)
@@ -108,7 +108,7 @@ def remove_user_profile_picture(id):
     return redirect(request.referrer)
 
 
-@auth.route('/edit/profile/<int:id>/profile_picture/', methods=['GET', 'POST'])
+@auth.route('/edit/profile/<int:id>/images/', methods=['GET', 'POST'])
 @login_required
 def edit_user_profile_picture(id):
     if request.method == "GET":
@@ -128,13 +128,13 @@ def edit_user_profile_picture(id):
             return redirect(request.referrer)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            while os.path.exists("website/static/profile_pictures/" + filename):
+            while os.path.exists("website/static/images/" + filename):
                 filename = str(random.randint(0, 10000)) + file.filename
-            file.save("website/static/profile_pictures/" + filename)
+            file.save("website/static/images/" + filename)
             user = User.query.filter_by(id=current_user.id).first()
             try:
-                original_pfp = "website/static/profile_pictures/" + user.profile_picture
-                if original_pfp == "website/static/profile_pictures/default_profile_photo.jpg":
+                original_pfp = "website/static/images/" + user.profile_picture
+                if original_pfp == "website/static/images/default_profile_photo.jpg":
                     pass
                 else:
                     if os.path.exists(original_pfp):

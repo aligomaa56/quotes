@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {%block body%}
 <div class="container">
-  <br /><br />
   <h2>
     {% if user.profile_picture %}
 
@@ -25,7 +24,7 @@
   <div class="container">
     <!-- FORM -->
     <form method="post">
-        <textarea name="post" cols="30" rows="10" class="form-control" placeholder="Write a post here..." maxlength="10000" required></textarea>
+        <textarea name="post" cols="30" rows="10" class="form-control" placeholder="Write a post here..." maxlength="83" required></textarea>
         <br />
         <input type="submit" value="Create Post" class="form-control btn btn-primary" />
     </form>

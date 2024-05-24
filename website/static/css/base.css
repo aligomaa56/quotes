@@ -1,0 +1,45 @@
+.container-fluid {
+    background-color: rgb(128, 50, 230);
+  }
+  
+  .navbar-nav .nav-link {
+    position: relative;
+    color: rgb(241, 233, 233);
+    width: 100px;
+    height: 50px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    margin-right: 2px;    
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: rgb(209, 206, 206);
+  }
+  
+  .navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 8px;
+    background-color: rgb(236, 233, 233);
+    box-shadow: 0 0 0 rgb(255, 255, 255);
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, box-shadow 0.3s;
+    z-index: -1;
+  }
+  
+  .navbar-nav .nav-link:hover::before {
+    width: 70%; /* Adjust width */
+    height: 70%; /* Adjust height */
+    top: 15%; /* Adjust top to center the smaller circle */
+    left: 15%; /* Adjust left to center the smaller circle */
+    box-shadow: 0 0 15px hsla(0, 0%, 100%, 0.721);
+  }
+  
+.navbar-brand {
+    color: aliceblue; /* Apply color to the navbar brand */
+  }
+  

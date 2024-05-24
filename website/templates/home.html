@@ -1,43 +1,45 @@
-{% extends "base.html" %} {% block body %}
+{% extends "base.html" %}
+{% block body %}
 <div class="container">
-  <form action="" method="post">
-    <div class="input-group mb-3">
+  <form action="" method="post" class="custom-search-form">
+    <div class="input-group mb-3 custom-search-group">
       <input
         type="text"
-        class="form-control"
-        placeholder="Search..."
+        class="form-control custom-search-input"
         aria-label="Search"
         aria-describedby="button-addon2"
         name="search"
       />
-      <input
-        class="btn btn-outline-primary"
+      <button
+        class="btn custom-search-button"
         type="submit"
         id="button-addon2"
-        value="Search"
       >
-
+        Search
       </button>
     </div>
-
   </form>
+
   {% for post, user in posts %}
-  <div class="border" style="border-radius: 10px; padding: 5px">
+  <div class="border">
     <a href="/profile/{{user.id}}" style="text-decoration: none;">
       <img
         src="../static/images/{{user.profile_picture}}"
         alt="Avatar Image"
-        style="border-radius: 50%; width: 30px; height: 30px"
+        class="photo"
+        style="margin-left: 20px; border-radius: 50%; width: 40px;"
       />
-    <a href="/profile/{{user.id}}" style="color: #6e8898; text-decoration: none;"><small>{{ user.first_name }} {{ user.last_name }}</small></a>
+    </a>
+    <a href="/profile/{{user.id}}" style="color: #6e8898; text-decoration: none;">
+      <small>{{ user.first_name }} {{ user.last_name }}</small>
+    </a>
 
-    <p>{{ post.data }}</p>
-        <!-- Liking Post -->
-        <form action="/post/{{post.id}}/like" method="post" style="display:inline">
-          <button type="submit" class="btn btn-outline-dark btn-sm" style="background-color: black;">🤍</button>
-          <p style="display: inline"> {{ post.likes | count }}</p>
-        </form>
-        
+    <p class="post-data" >{{ post.data }}</p>
+    <!-- Liking Post -->
+    <form action="/post/{{post.id}}/like" method="post" class="like">
+      <button type="submit" class="btn btn-outline-dark btn-sm" style="background-color: black;">🤍</button>
+      <p style="display: inline"> {{ post.likes | count }}</p>
+    </form>
   </div>
   <br />
   {% endfor %}

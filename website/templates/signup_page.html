@@ -1,11 +1,19 @@
-{% extends 'base.html' %} {% block extra_css %}
-<link rel="stylesheet" href="static/fade_in.css" />
-{% endblock %} {% block body %}
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/css/signup.css"/>
+{% endblock %}
+
+{% block body %}
 <div class="signup-page">
   <br /><br />
-  <h1>Git In Touch</h1>
   <form action="" method="post">
     <table class="signup-table">
+      <tr>
+        <td class="signup-boxes" colspan="2" style="text-align: center;">
+          <h1>Get in touch</h1>
+        </td>
+      </tr>
       <tr>
         <td class="signup-boxes">
           <input
@@ -16,6 +24,8 @@
             value="{{form_first_name}}"
           />
         </td>
+      </tr>
+      <tr>
         <td class="signup-boxes">
           <input
             type="text"
@@ -36,6 +46,8 @@
             value="{{form_email}}"
           />
         </td>
+      </tr>
+      <tr>
         <td class="signup-boxes">
           <input
             type="password"
@@ -46,7 +58,7 @@
         </td>
       </tr>
       <tr>
-        <td class="signup-boxes" colspan="2">
+        <td class="signup-boxes">
           <input
             type="password"
             name="password2"
@@ -56,21 +68,21 @@
         </td>
       </tr>
       <tr>
-        <td class="signup-boxes" colspan="2">
+        <td class="signup-boxes">
           <input
             type="submit"
-            class="btn btn-primary form-control signup-boxes"
+            class="btn btn-primary form-control"
             value="Sign Up"
           />
         </td>
       </tr>
       <tr>
-        <td class="signup-boxes" colspan="2">
-          <a href="/" class="form-text">Back to Sign In page</a>
+        <td class="signup-boxes">
+          <a href="/" class="form-text" >Log in</a>
         </td>
       </tr>
     </table>
   </form>
 </div>
-
+</center>
 {% endblock %}
