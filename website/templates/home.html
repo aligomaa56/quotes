@@ -1,70 +1,5 @@
 {% extends "base.html" %}
 {% block body %}
-<style >
-  .custom-search-input {
-    border: none;
-    border-bottom: 2px solid white;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    border-radius: 0;
-  }
-
-  .custom-search-input:focus {
-    background-color: transparent;
-    color: white;
-    outline: none;
-    box-shadow: none;
-    border-color: white;
-  }
-
-  .custom-search-button {
-    border: none;
-    border-bottom: 2px solid white;
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.607);
-    border-radius: 0;
-    padding-left: 10px;
-    cursor: pointer;
-  }
-
-  .custom-search-button:hover {
-    color: #ffffff;
-  }
-
-  .custom-search-group {
-    display: flex;
-    align-items: center;
-  }
-
-  .custom-search-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-    .border {
-    padding: 10px 15px;
-    border-radius: 6px;
-    max-width: 500px; 
-    margin: auto; 
-  }
-
-  .post-data {
-    margin-left: 40px; /* Adjust the value as needed */
-}
-
-.photo {
-    margin-left: 20px;
-    border-radius: 50%;
-    width: 40px; /* Adjust as needed */
-}
-
-.like {
-    padding-left: 20px;
-    display:inline
-}
-
-</style>
-
 <div class="container">
   <form action="" method="post" class="custom-search-form">
     <div class="input-group mb-3 custom-search-group">
@@ -92,6 +27,7 @@
         src="../static/images/{{user.profile_picture}}"
         alt="Avatar Image"
         class="photo"
+        style="margin-left: 20px; border-radius: 50%; width: 40px;"
       />
     </a>
     <a href="/profile/{{user.id}}" style="color: #6e8898; text-decoration: none;">
