@@ -11,49 +11,10 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fade_in.css') }}">
     {% block extra_css %}{% endblock %}
-    <style>
-      body {
-        background: linear-gradient(to bottom, #000000, #00000086);
-        color: white;
-      }
-      .navbar-nav .nav-link {
-        position: relative;
-        color: white;
-        transition: color 0.3s, background-color 0.3s;
-        width: 100px;  /* Set fixed width */
-        height: 50px;  /* Set fixed height */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .navbar-nav .nav-link:hover {
-        color: black;
-      }
-
-      .navbar-nav .nav-link::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 8px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 0 0 0 rgb(255, 255, 255);
-        transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, box-shadow 0.3s;
-        z-index: -1;
-      }
-
-      .navbar-nav .nav-link:hover::before {
-        width: 70%;  /* Adjust width */
-        height: 70%;  /* Adjust height */
-        top: 15%;  /* Adjust top to center the smaller circle */
-        left: 15%;  /* Adjust left to center the smaller circle */
-        box-shadow: 0 0 15px hsla(0, 0%, 100%, 0.721);
-      }
-    </style>
+    
     <title>{% block title %}Quotes | {{page}}{% endblock %}</title>
   </head>
   {% endblock %}
@@ -84,6 +45,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/edit/profile/">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
             </li>
           </ul>
         </div>
