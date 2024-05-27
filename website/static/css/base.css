@@ -1,45 +1,104 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bg.jpg');
+    opacity: 0.8;
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
+    background-position: center; 
+}
 .container-fluid {
-    background-color: rgb(128, 50, 230);
-  }
-  
-  .navbar-nav .nav-link {
+
+    overflow: hidden;
+    display: inline;
+    text-decoration: none;
+    margin-top: -10px;
+    align-items: center;
+    margin-bottom: -8px;
+    font-size: small;
+    font-weight: bold;
+
+    
+}
+
+.nav-link {
     position: relative;
-    color: rgb(241, 233, 233);
-    width: 100px;
+    color: rgb(10, 5, 5);
+    width: 80px;
     height: 50px;
     display: flex;
-    text-decoration: none;
     align-items: center;
-    margin-right: 2px;    
-  }
-  
-  .navbar-nav .nav-link:hover {
-    color: rgb(209, 206, 206);
-  }
-  
-  .navbar-nav .nav-link::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 8px;
-    background-color: rgb(236, 233, 233);
-    box-shadow: 0 0 0 rgb(255, 255, 255);
-    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, box-shadow 0.3s;
-    z-index: -1;
-  }
-  
-  .navbar-nav .nav-link:hover::before {
-    width: 70%; /* Adjust width */
-    height: 70%; /* Adjust height */
-    top: 15%; /* Adjust top to center the smaller circle */
-    left: 15%; /* Adjust left to center the smaller circle */
-    box-shadow: 0 0 15px hsla(0, 0%, 100%, 0.721);
-  }
-  
+    margin-right: 2px;
+    padding-left: 10px;
+}
+
+
+.nav-link:hover ,.navbar-brand:hover{
+
+    border-color: #28c2d6;
+    border-radius: 30px;
+    background-color: #0d636e;
+    box-shadow: #28c2d6;
+    color: white;
+}
+
 .navbar-brand {
-    color: aliceblue; /* Apply color to the navbar brand */
-  }
-  
+    color: aliceblue;
+    margin-right: 170px;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.nav-link i {
+    margin-right: 8px;
+}
+
+.profile-photo {
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Ensure it's the same as width to make it a circle */
+    border-radius: 50%; /* Makes the image a circle */
+    margin-right: 8px; /* Space between the photo and the text */
+    object-fit: cover; /* Ensures the image covers the area, maintaining aspect ratio */
+    vertical-align: middle; /* Aligns the image vertically with the text */
+}
+
+/* Custom search form styles */
+.custom-search-form {
+    display: flex;
+    align-items: center;
+
+}
+
+.custom-search-input {
+    width: 470px; /* Adjust width as needed */
+    margin-right: 5px; /* Space between input and button */
+    border-radius: 20px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the input */
+    border: 1px solid #080808; /* Border color */
+
+    opacity: 0.6;
+    color: #0a0909; /* Text color */
+    
+}
+
+.custom-search-input:focus {
+    background-color: #6aacac;
+    font-weight: bolder;
+    color: black;
+}
+
+.custom-search-input:hover {
+    color: #e1d9e4;
+}
+
+.custom-search-button {
+    border-radius: 20px;
+    padding: 5px 10px;
+
+}
+

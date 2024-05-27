@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block body %}
 <div class="container">
-  <h1>Settings</h1>
-  <a href="/edit/profile/{{current_user.id}}/images" class="btn btn-outline-primary">Change Profile Picture</a>
+  <center>
+    <br>
+  <h1 style="color:black;">Settings</h1>
   <form method="post">
     <table class="">
      
       <tr>
-        <label>Name
+        <label class="name">Name
         <td class="signup">
           <input
             type="text"
@@ -92,6 +93,9 @@
     </table>
   </form>
   <br><br>
+  <a href="/edit/profile/{{current_user.id}}/images" class="btn btn-outline-primary">Change Profile Picture</a>
+
   <a href="/logout" class="btn btn-outline-danger">Log Out</a><br><br><br><br>
 </div>
+</center>
 {% endblock %}
