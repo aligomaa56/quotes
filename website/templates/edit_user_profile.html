@@ -1,101 +1,117 @@
 {% extends 'base.html' %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+{% endblock %}
+
 {% block body %}
-<div class="container">
+<div class="tcontainer">
   <center>
     <br>
-  <h1 style="color:black;">Settings</h1>
-  <form method="post">
-    <table class="">
-     
-      <tr>
-        <label class="name">Name
-        <td class="signup">
-          <input
-            type="text"
-            name="first_name"
-            placeholder="First Name"
-            class="form-control"
-            value="{{current_user.first_name}}"
-            
-          />
-        </td>
-        <td class="signup-boxes">
-          <input
-            type="text"
-            name="last_name"
-            placeholder="Last Name"
-            class="form-control"
-            value="{{current_user.last_name}}"
-          />
-        </td></label>
+    <h1 style="color:black;">Settings</h1>
+    <form method="post">
+      <table class="table">
+        <!-- First Name and Last Name Row -->
+        <tr>
+          <td class="signup-boxes" colspan="2">
+            <label for="first_name">First Name:</label>
+            <input
+              type="text"
+              name="first_name"
+              id="first_name"
+              placeholder="First Name"
+              class="form-control"
+              value="{{current_user.first_name}}"
+            />
+          </td>
+          <td class="signup-boxes" colspan="2">
+            <label for="last_name">Last Name:</label>
+            <input
+              type="text"
+              name="last_name"
+              id="last_name"
+              placeholder="Last Name"
+              class="form-control"
+              value="{{current_user.last_name}}"
+            />
+          </td>
         </tr>
-     
-      <tr>
-        <td class="signup-boxes" colspan="2"><label for="">Email
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            class="form-control"
-            value="{{current_user.email}}"
-           
-          /></label><br><label for="">Password</td></tr>
-          
-          <tr> 
-        <td class="signup-boxes" colspan="2"> 
-          <input
-            type="password"
-            name="old_password"
-            placeholder="Type your old password"
-            class="form-control"
-            id="password"
-          />
-        </td>
-      </tr>
-      <tr>
-        <td class="signup-boxes" colspan="1">
-          <input
-            type="password"
-            name="password1"
-            placeholder="New Password"
-            class="form-control"
-          />
-        </td>
-
-        <td class="signup-boxes" colspan="1">
-          <input
-            type="password"
-            name="password2"
-            placeholder="Type new password again"
-            class="form-control"
-          />
-        </td>
-      </tr>
-      <tr>
-        <td class="signup-boxes" colspan="2"><label for="">Your Bio</label>
+        <!-- Email Row -->
+        <tr>
+          <td class="signup-boxes" colspan="4">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              class="form-control"
+              value="{{current_user.email}}"
+            />
+          </td>
+        </tr>
+        <!-- Old Password Row -->
+        <tr>
+          <td class="signup-boxes" colspan="4">
+            <label for="old_password">Old Password:</label>
+            <input
+              type="password"
+              name="old_password"
+              id="old_password"
+              placeholder="Type your old password"
+              class="form-control"
+            />
+          </td>
+        </tr>
+        <!-- New Password and Confirm New Password Row -->
+        <tr>
+          <td class="signup-boxes" colspan="2">
+            <label for="password1">New Password:</label>
+            <input
+              type="password"
+              name="password1"
+              id="password1"
+              placeholder="New Password"
+              class="form-control"
+            />
+          </td>
+          <td class="signup-boxes" colspan="2">
+            <label for="password2">Type new password again:</label>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              placeholder="Type new password again"
+              class="form-control"
+            />
+          </td>
+        </tr>
+        <!-- Bio Row -->
+        <tr>
+          <td class="signup-boxes" colspan="4">
+            <label for="bio">Your Bio:</label>
             {% if current_user.bio == None or current_user.bio == "" %}
-            <textarea name="bio" cols="30" rows="10" placeholder="Enter your bio" class="form-control"></textarea>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your bio" class="form-control"></textarea>
             {% else %}
-            <textarea name="bio" cols="30" rows="10" placeholder="Enter your bio (max 1,500 characters). Markup (HTML) supported." class="form-control" maxlength="1500">{{current_user.bio}}</textarea>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter your bio (max 1,500 characters). Markup (HTML) supported." class="form-control" maxlength="1500">{{current_user.bio}}</textarea>
             {% endif %} 
-        </td>
-      </tr> 
-      
-      <tr>
-        <td class="signup-boxes" colspan="2"><br>
-          <input
-            type="submit"
-            class="btn btn-primary form-control signup-boxes"
-            value="Update Profile"
-          /></label>
-        </td>
-      </tr>
-    </table>
-  </form>
-  <br><br>
-  <a href="/edit/profile/{{current_user.id}}/images" class="btn btn-outline-primary">Change Profile Picture</a>
-
-  <a href="/logout" class="btn btn-outline-danger">Log Out</a><br><br><br><br>
+          </td>
+        </tr> 
+        <!-- Update Profile Button Row -->
+        <tr>
+          <td class="signup-boxes" colspan="4">
+            <input
+              type="submit"
+              class="btn btn-primary form-control signup-boxes update"
+              value="Update Profile"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <br><br>
+    <a href="/edit/profile/{{current_user.id}}/images" class="btn btn-outline-primary">Change Profile Picture</a>
+    <a href="/logout" class="btn btn-outline-danger">Log Out</a>
+    <br><br><br><br>
+  </center>
 </div>
-</center>
 {% endblock %}
