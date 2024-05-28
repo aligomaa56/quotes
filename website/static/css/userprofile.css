@@ -44,7 +44,7 @@ textarea#po{
     width: 400px;
     margin-left: 500px;
     background-color: rgb(248, 253, 255);
-    
+    padding: 10px;
     
 }
 .p{
@@ -53,10 +53,10 @@ textarea#po{
 }
 .btn-outline-like{
     background-color: #427785;
-    margin-left: 2px;
+    margin-left: 220px;
 }
 .btn-warning{
-    margin-left: 220px;
+    margin-left: 10px;
     background-color: #427785;
     border-color: beige;
 }

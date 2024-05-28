@@ -1,49 +1,50 @@
-{% extends 'base.html' %}
-
-{% block title %}Edit Profile{% endblock %}
-
-{% block extra_css %}
+{% extends 'base.html' %} {% block body %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/profilepic.css') }}">
-{% endblock %}
 
-{% block body %}
-<div class="edit-profile-content">
-  <h2>Edit Your Profile</h2>
-  <form action="{{ url_for('edit_user_profile', id=current_user.id) }}" method="POST" enctype="multipart/form-data">
-    <div class="mb-3">
-      <label for="first_name" class="form-label">First Name</label>
-      <input type="text" id="first_name" name="first_name" class="form-control" value="{{ current_user.first_name }}" required>
-    </div>
-    <div class="mb-3">
-      <label for="last_name" class="form-label">Last Name</label>
-      <input type="text" id="last_name" name="last_name" class="form-control" value="{{ current_user.last_name }}" required>
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
-      <input type="email" id="email" name="email" class="form-control" value="{{ current_user.email }}" required>
-    </div>
-    <div class="mb-3">
-      <label for="bio" class="form-label">Bio</label>
-      <textarea id="bio" name="bio" class="form-control">{{ current_user.bio }}</textarea>
-    </div>
-    <div class="mb-3">
-      <label for="old_password" class="form-label">Old Password</label>
-      <input type="password" id="old_password" name="old_password" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="password1" class="form-label">New Password</label>
-      <input type="password" id="password1" name="password1" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="password2" class="form-label">Confirm New Password</label>
-      <input type="password" id="password2" name="password2" class="form-control">
-    </div>
-    <div class="mb-3">
-      <label for="profile_picture" class="form-label">Profile Picture</label>
-      <input type="file" id="profile_picture" name="profile_picture" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+<div class="pcontainer">
+  <div class="pic">
   </form>
-  <a href="/edit/profile/{{user.id}}/remove_profile_picture/" class="btn btn-sm btn-outline-primary mt-3">Remove Profile Photo</a>
+  <br /><br /><br />
+  <h3>Your Profile Photo</h3>
+  {% if user.profile_picture %}
+  <img
+    src="/static/images/{{user.profile_picture}}"
+    alt="Avatar Image"
+    style="border-radius: 50%; width: 150px; height: 150px"
+  />
+  </div>
+  <div class="edit">
+    <form
+    action="/edit/profile/{{user.id}}/images/"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input
+      type="file"
+      id="img"
+      name="profile_picture"
+      accept="image/*"
+      class="form-control"
+    />
+    <br />
+    <input type="submit" class="btn btn-primary form-control" />
+  
+  </div>
+  <div class="remove">
+    <a
+    href="/edit/profile/{{user.id}}/remove_profile_picture/"
+    class="btn btn-sm btn-outline-primary"
+    >Remove Profile Photo</a
+  >
+  </div>
+  
+  {% else %}
+  <img
+    src="/static/images/default_profile_photo.jpg"
+    alt="Avatar Image"
+    style="border-radius: 50%; width: 150px; height: 150px"
+  />
+  {% endif %}
 </div>
+
 {% endblock %}

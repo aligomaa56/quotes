@@ -30,8 +30,7 @@ body, html {
     padding-left: 10px;
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, border-radius 0.3s;
 }
-.nav-link:hover,
-.navbar-brand:hover {
+.nav-link:hover {
     border-color: #28c2d6;
     border-radius: 25px; /* Adjusted border radius */
     background-color: #0d636e;
