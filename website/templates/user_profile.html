@@ -25,13 +25,16 @@
   >
   <div class="bio">
     <h5>Bio</h5>
-  {% if user.bio == None or user.bio == "" %}
-  <p>This user has no bio.</p>
-  {% else %}
+    {% if user.bio == None or user.bio == "" %}
+      <p>This user has no bio.</p>
+    {% else %}
+      <div class="bio-content">
+        <p>{{ user.bio }}</p>
+      </div>
   </div>
   
-  <div class="container border" style="border-radius: 10px;">
-  <p class="" style="padding: 10px">{{ user.bio }}</p></div><br>
+ 
+  
   {% endif %}
   <br /><br />
   <div class="container_post">
@@ -52,7 +55,10 @@
   <p>This user has no posts.</p>
   {% endif %} {% for post in posts %}
   <div class="border_p" style="border-radius: 10px; padding: 5px">
+    <div class="p">
     <p>{{ post.data }}</p>
+
+    </div>
     <small
       >{% if id == current_user.id %}
       <a

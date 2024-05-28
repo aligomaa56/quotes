@@ -4,14 +4,12 @@ body, html {
     width: 100%;
     height: 100%;
     background-image: url('../images/bg.jpg');
-    opacity: 0.8;
-    background-size: cover; /* Ensure the image covers the entire container */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-attachment: fixed; /* Keep the background fixed when scrolling */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center; 
 }
 .container-fluid {
-
     overflow: hidden;
     display: inline;
     text-decoration: none;
@@ -20,12 +18,8 @@ body, html {
     margin-bottom: -8px;
     font-size: small;
     font-weight: bold;
-
-    
 }
-
 .nav-link {
-    position: relative;
     color: rgb(10, 5, 5);
     width: 80px;
     height: 50px;
@@ -33,72 +27,58 @@ body, html {
     align-items: center;
     margin-right: 2px;
     padding-left: 10px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, border-radius 0.3s;
 }
-
-
-.nav-link:hover ,.navbar-brand:hover{
-
+.nav-link:hover,
+.navbar-brand:hover {
     border-color: #28c2d6;
-    border-radius: 30px;
+    border-radius: 25px; /* Adjusted border radius */
     background-color: #0d636e;
-    box-shadow: #28c2d6;
+    box-shadow: 0 0 10px #28c2d6; /* Added box-shadow for better effect */
     color: white;
 }
-
 .navbar-brand {
     color: aliceblue;
     margin-right: 170px;
 }
-
 .navbar-brand i {
     margin-right: 8px;
 }
-
 .nav-link i {
     margin-right: 8px;
 }
-
 .profile-photo {
-    width: 20px; /* Adjust the size as needed */
-    height: 20px; /* Ensure it's the same as width to make it a circle */
-    border-radius: 50%; /* Makes the image a circle */
-    margin-right: 8px; /* Space between the photo and the text */
-    object-fit: cover; /* Ensures the image covers the area, maintaining aspect ratio */
-    vertical-align: middle; /* Aligns the image vertically with the text */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px; 
+    object-fit: cover;
+    vertical-align: middle;
 }
-
-/* Custom search form styles */
 .custom-search-form {
     display: flex;
     align-items: center;
 
 }
-
 .custom-search-input {
-    width: 470px; /* Adjust width as needed */
-    margin-right: 5px; /* Space between input and button */
-    border-radius: 20px; /* Rounded corners */
-    padding: 5px 10px; /* Padding inside the input */
-    border: 1px solid #080808; /* Border color */
-
+    width: 470px;
+    margin-right: 5px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: 1px solid #080808;
     opacity: 0.6;
-    color: #0a0909; /* Text color */
-    
+    color: #0a0909;
 }
-
 .custom-search-input:focus {
     background-color: #6aacac;
     font-weight: bolder;
     color: black;
 }
-
 .custom-search-input:hover {
     color: #e1d9e4;
 }
-
 .custom-search-button {
     border-radius: 20px;
     padding: 5px 10px;
-
 }
 

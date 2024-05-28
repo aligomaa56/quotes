@@ -9,8 +9,14 @@
     color: #0e0c0c;
     font-weight: bolder;
 }
+.border a {
+    text-decoration: none;
+}
+
 .post-data{
     margin-top: 5px;
+    justify-content: center;
+    display: flex;
 }
 .btn-outline-dark{
     background-color: #427785;

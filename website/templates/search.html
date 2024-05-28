@@ -11,7 +11,7 @@
       {% if users %}
       {% for user in users %}
       <div class="border" style="border-radius: 10px; padding:5px">
-    <strong><a href="/profile/{{user.id}}" style="color: black;">{{ user.first_name }} {{ user.last_name }}</a></strong></div>{% endfor %}{% else %} There are no users matching your search. <br> {% endif %}
+    <strong><a href="/profile/{{ user.id }}" style="color: black;">{{ user.first_name }} {{ user.last_name }}</a></strong></div>{% endfor %}{% else %} There are no users matching your search. <br> {% endif %}
     <br></div>
     <div class="postsearch">
       <h3>Posts</h3>
