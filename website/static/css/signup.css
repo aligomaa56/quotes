@@ -12,6 +12,7 @@ body {
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: 10% center;
+  height: auto;
 }
 
 .signup-page {
@@ -63,8 +64,7 @@ body {
   outline: none;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 }
-
-.btn-primary:hover {
+.btn-primary:hover{
   background-color: #9c5ce4;
   box-shadow: 0 0 10px #9c5ce4;
 }
@@ -96,3 +96,12 @@ input[type="password"] {
   font-weight: bold;
   margin-bottom: 20px;
 }
+.login{
+  text-align: center;
+  color: black;
+  display: block;
+  margin: auto;
+  width: 50%;
+  margin-top: 5px;
+}
+

@@ -1,0 +1,26 @@
+.pcontainer{
+    width: 800px;
+    margin: auto;
+}
+.pic{
+    margin-left: 20px;
+}
+.edit{
+    width: 500px;
+    float: right;
+    margin-top: -50px;
+}
+
+.remove{
+    margin-top: 30px;
+}
+.btn-primary,.btn-outline-primary{
+    background-color: #427785;
+    border-color: beige;
+}
+.btn-primary:hover, .btn-outline-primary:hover{
+    background-color: beige;
+    color: black;
+    border-color: #427785;
+}
+

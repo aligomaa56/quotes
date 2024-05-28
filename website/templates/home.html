@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="container">
-  <form action="" method="post" class="custom-search-form">
+  <!-- <form action="" method="post" class="custom-search-form">
     <div class="input-group mb-3 custom-search-group">
       <input
         type="text"
@@ -18,26 +18,26 @@
         Search
       </button>
     </div>
-  </form>
+  </form> -->
 
   {% for post, user in posts %}
   <div class="border">
-    <a href="/profile/{{user.id}}" style="text-decoration: none;">
+    <a href="/profile/{{user.id}}">
       <img
         src="../static/images/{{user.profile_picture}}"
         alt="Avatar Image"
         class="photo"
-        style="margin-left: 20px; border-radius: 50%; width: 40px;"
+        style="margin-right: 5px; border-radius: 50%; width: 30px;"
       />
     </a>
-    <a href="/profile/{{user.id}}" style="color: #6e8898; text-decoration: none;">
-      <small>{{ user.first_name }} {{ user.last_name }}</small>
+    <a href="/profile/{{user.id}}" style="color: #020202; text-decoration: none;">
+      {{ user.first_name }} {{ user.last_name }}
     </a>
 
     <p class="post-data" >{{ post.data }}</p>
     <!-- Liking Post -->
     <form action="/post/{{post.id}}/like" method="post" class="like">
-      <button type="submit" class="btn btn-outline-dark btn-sm" style="background-color: black;">🤍</button>
+      <button type="submit" class="btn btn-outline-dark btn-sm">🤍</button>
       <p style="display: inline"> {{ post.likes | count }}</p>
     </form>
   </div>

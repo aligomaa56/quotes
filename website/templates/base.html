@@ -11,7 +11,14 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+
     {% block extra_css %}{% endblock %}
     
     <title>{% block title %}Quotes | {{page}}{% endblock %}</title>
@@ -25,7 +32,9 @@
       style="background: transparent !important; width: 100%; z-index: 1000"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="/home/">Quotes</a>
+        <a class="navbar-brand" href="/home/">
+          Quotes
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,17 +47,42 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form action="" method="post" class="d-flex ms-auto custom-search-form">
+            <input
+              type="text"
+              class="form-control custom-search-input"
+              aria-label="Search"
+              aria-describedby="button-addon2"
+              name="search"
+              placeholder="Search"
+            />
+            <button
+              class="btn btn-outline-light custom-search-button"
+              type="submit"
+              id="button-addon2"
+            >
+              <i class="fas fa-search"></i> Search
+            </button>
+          </form>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
             <li class="nav-item">
-              <a class="nav-link" href="/profile/">Profile</a>
+              <a class="nav-link" href="/profile/">
+                <img src="../static/images/{{user.profile_picture}}" alt="Profile" class="profile-photo"> Profile
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/edit/profile/">Settings</a>
+              <a class="nav-link" href="/edit/profile/">
+                <i class="fas fa-cog"></i> Settings
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
+              <a class="nav-link" href="/logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
             </li>
           </ul>
+
         </div>
       </div>
     </nav>
@@ -87,11 +121,13 @@
         aria-label="Close"
       ></button>
     </div>
+
     {% endif %}
     {% endfor %}
     {% endif %}
     {% endwith %}
     {% block body %}{% endblock %}
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
