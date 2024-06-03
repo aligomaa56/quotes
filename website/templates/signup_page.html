@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="../static/css/signup.css"/>
+  <!-- Include the CSS file for the signup page -->
+  <link rel="stylesheet" href="../static/css/signup.css"/>
 {% endblock %}
 
 {% block body %}
@@ -16,6 +17,7 @@
       </tr>
       <tr>
         <td class="signup-boxes">
+          <!-- Input field for first name -->
           <input
             type="text"
             name="first_name"
@@ -27,6 +29,7 @@
       </tr>
       <tr>
         <td class="signup-boxes">
+          <!-- Input field for last name -->
           <input
             type="text"
             name="last_name"
@@ -38,6 +41,7 @@
       </tr>
       <tr>
         <td class="signup-boxes">
+          <!-- Input field for email -->
           <input
             type="email"
             name="email"
@@ -49,6 +53,7 @@
       </tr>
       <tr>
         <td class="signup-boxes">
+          <!-- Input field for password -->
           <input
             type="password"
             name="password1"
@@ -59,6 +64,7 @@
       </tr>
       <tr>
         <td class="signup-boxes">
+          <!-- Input field for password confirmation -->
           <input
             type="password"
             name="password2"
@@ -69,6 +75,7 @@
       </tr>
       <tr>
         <td class="signup-boxes">
+          <!-- Submit button -->
           <input
             type="submit"
             class="btn btn-primary form-control"
@@ -78,7 +85,8 @@
       </tr>
       <tr>
         <td class="signup-boxes">
-          <a href="/" class="login" >Log in</a>
+          <!-- Link to login page -->
+          <a href="/" class="login">Log in</a>
         </td>
       </tr>
     </table>

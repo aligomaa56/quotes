@@ -15,12 +15,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
 
     {% block extra_css %}{% endblock %}
-    
+
     <title>{% block title %}Quotes | {{page}}{% endblock %}</title>
   </head>
   {% endblock %}
@@ -32,9 +37,9 @@
       style="background: transparent !important; width: 100%; z-index: 1000"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="/home/">
-          Quotes
-        </a>
+        <!-- Define the website logo and link -->
+        <a class="navbar-brand" href="/home/"> Quotes </a>
+        <!-- Define the navbar toggler button -->
         <button
           class="navbar-toggler"
           type="button"
@@ -46,8 +51,15 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Define the navbar collapse section -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form action="" method="post" class="d-flex ms-auto custom-search-form">
+          <!-- Define the search form -->
+          <form
+            action=""
+            method="post"
+            class="d-flex ms-auto custom-search-form"
+          >
+            <!-- Define the search input field -->
             <input
               type="text"
               class="form-control custom-search-input"
@@ -56,33 +68,45 @@
               name="search"
               placeholder="Search"
             />
+            <!-- Define the search button -->
             <button
               class="btn btn-outline-light custom-search-button"
               type="submit"
               id="button-addon2"
             >
+              <!-- Use a Font Awesome icon for the search button -->
               <i class="fas fa-search"></i> Search
             </button>
           </form>
+          <!-- Define the navigation items -->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
+            <!-- Define the navigation item for the user's profile -->
             <li class="nav-item">
               <a class="nav-link" href="/profile/">
-                <img src="../static/images/{{user.profile_picture}}" alt="Profile" class="profile-photo"> Profile
+                <!-- Display the user's profile picture -->
+                <img
+                  src="../static/images/{{user.profile_picture}}"
+                  alt="Profile"
+                  class="profile-photo"
+                />
+                Profile
               </a>
             </li>
+            <!-- Define the navigation item for the settings page -->
             <li class="nav-item">
               <a class="nav-link" href="/edit/profile/">
+                <!-- Use a Font Awesome icon for the settings link -->
                 <i class="fas fa-cog"></i> Settings
               </a>
             </li>
+            <!-- Define the navigation item for logging out -->
             <li class="nav-item">
               <a class="nav-link" href="/logout">
+                <!-- Use a Font Awesome icon for the logout link -->
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
             </li>
           </ul>
-
         </div>
       </div>
     </nav>
@@ -92,36 +116,38 @@
     {% if messages %}
     {% for category, message in messages %}
     {% if category == 'error' %}
+    <!-- Display an error alert message -->
     <div class="alert alert-danger alert-dismissable fade show" role="alert">
       {{ message }}
       <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
       ></button>
     </div>
     {% elif category == 'primary' %}
+    <!-- Display a primary alert message -->
     <div class="alert alert-primary alert-dismissable fade show" role="alert">
       {{ message }}
       <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
       ></button>
     </div>
     {% else %}
+    <!-- Display a success alert message -->
     <div class="alert alert-success alert-dismissable fade show" role="alert">
       {{ message }}
       <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
       ></button>
     </div>
-
     {% endif %}
     {% endfor %}
     {% endif %}

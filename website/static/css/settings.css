@@ -1,19 +1,19 @@
-.tcontainer{
-    width: 600px;
-   margin: auto;
-}
-.table label{
-    margin-left: 10px;
-
+.tcontainer {
+  width: 600px;
+  margin: auto;
 }
 
-.table{
-    background: none;
-    padding: 10px;
-    margin-right: 20px;
+.table label {
+  margin-left: 10px;
 }
 
-.update{
-    background-color: beige;
-    border-color: black;
+.table {
+  background: none;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.update {
+  background-color: beige;
+  border-color: black;
 }
