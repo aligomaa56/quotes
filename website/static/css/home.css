@@ -1,68 +1,73 @@
 .border {
-    margin: auto;
-    width: 50%;
-    padding: 15px;
-    text-decoration: none;
-    margin-bottom: -25px;
-    background-color: rgb(248, 253, 255);
-    opacity: 0.9;
-    color: #0e0c0c;
-    font-weight: bolder;
+  margin: auto;
+  width: 50%;
+  padding: 15px;
+  text-decoration: none;
+  margin-bottom: -25px;
+  background-color: rgb(248, 253, 255);
+  opacity: 0.9;
+  color: #0e0c0c;
+  font-weight: bolder;
 }
+
 .border a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.post-data{
-    margin-top: 5px;
-    justify-content: center;
-    display: flex;
-}
-.btn-outline-dark{
-    background-color: #427785;
-    margin-top: -20px;
+.post-data {
+  margin-top: 5px;
+  justify-content: center;
+  display: flex;
 }
 
-
-.form-control{
-    background-color: beige;
-    margin: 4px;
-
+.btn-outline-dark {
+  background-color: #427785;
+  margin-top: -20px;
 }
+
+.form-control {
+  background-color: beige;
+  margin: 4px;
+}
+
 .h1 {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
-.btn-outline-primary, .btn-outline-danger{
-    color: black;
-    border-color: black;
-    margin: 20px;
-    margin-top: 0px;
-    background-color: beige;
+.btn-outline-primary,
+.btn-outline-danger {
+  color: black;
+  border-color: black;
+  margin: 20px;
+  margin-top: 0px;
+  background-color: beige;
 }
-.btn-outline-primary:hover{
-    background-color: black;
-    color: white;
+
+.btn-outline-primary:hover {
+  background-color: black;
+  color: white;
 }
-.container{
-    color: black;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: bolder;
+
+.container {
+  color: black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bolder;
 }
 
 .btn-primary {
-    background-color: beige;
-    color: black;
-}
-.btn-primary:hover{
-    background-color: black;
-    color: white;
+  background-color: beige;
+  color: black;
 }
 
-.like{
-    margin-left: 470px;
-}
-.post{
-    width: 400px;
+.btn-primary:hover {
+  background-color: black;
+  color: white;
 }
 
+.like {
+  margin-left: 470px;
+}
+.post {
+  width: 400px;
+}

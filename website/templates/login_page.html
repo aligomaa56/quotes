@@ -1,39 +1,53 @@
 {% extends 'base.html' %}
-{%block extra_css%}
+
+{% block extra_css %}
 <link rel="stylesheet" href="../static/css/login.css">
 {% endblock %}
 
 {% block body %}
+<!-- Login table -->
 <table class="login-table">
 
+  <!-- Table row for heading -->
   <tr class="txt">
     <td colspan="2">
       <h1>Login</h1>
     </td>
   </tr>
 
+  <!-- Table row for login form -->
+  <tr>
     <td class="login-th">
       <div class="input-group mb-3">
         <form action="" method="post">
+
+          <!-- Email input field -->
           <input
             type="email"
             name="email"
             placeholder="email address"
             class="form-control"
           />
+
+          <!-- Password input field -->
           <input
             type="password"
             name="password"
             placeholder="password"
             class="form-control"
           />
+
+          <!-- Submit button -->
           <span class="d-grid gap-2">
             <input type="submit" class="btn btn-primary form-control" value="Log In" />
           </span>
         </form>
       </div>
+
+      <!-- Sign up link -->
       <p class="form-text">Don't have an account?
-      <a href="sign-up" class="form-text" style="color:black">Sign Up</a></p>
+        <a href="sign-up" class="form-text" style="color:black">Sign Up</a>
+      </p>
     </td>
   </tr>
 </table>

@@ -1,37 +1,58 @@
 {% extends 'base.html' %} {% block body %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/search.css') }}"
+/>
 
 <div class="searchcontainer">
-    <div class="show">
+  <div class="show">
     <h2>Showing results for "{{query}}"</h2>
-
-    </div>
-    <div class="user">
-      <h3>Users</h3>
-      {% if users %}
-      {% for user in users %}
-      <div class="border" style="border-radius: 10px; padding:5px">
-    <strong><a href="/profile/{{ user.id }}" style="color: black;">{{ user.first_name }} {{ user.last_name }}</a></strong></div>{% endfor %}{% else %} There are no users matching your search. <br> {% endif %}
-    <br></div>
-    <div class="postsearch">
-      <h3>Posts</h3>
-      {% if posts %}
-      {% for post, user in posts %}
-    </div>
-  <div class="border_p" style="border-radius: 10px; padding: 5px">
-    <small><a href="/profile/{{user.id}}" style="color: #6e8898; text-decoration: none;">{{ user.first_name }} {{ user.last_name }}</a></small>
-    <p>{{ post.data }}</p>
-    {% if current_user.id == post.user_id %}
-    
-    {% else %}{% endif %}
-    <form action="/post/{{post.id}}/like" method="post" style="display: inline">
-      <input type="submit" class="btn btn-outline-like btn-sm" value="🤍" />
-      <p style="display: inline">{{ post.likes | count }}</p></form>
-    </form>
   </div>
-  <br />
-  {% endfor %}{%else%} There are no posts matching your search.{% endif %}
+
+  <div class="user">
+    <h3>Users</h3>
+    {% if users %} {% for user in users %}
+    <div class="border" style="border-radius: 10px; padding: 5px">
+      <strong
+        ><a href="/profile/{{ user.id }}" style="color: black"
+          >{{ user.first_name }} {{ user.last_name }}</a
+        ></strong
+      >
+    </div>
+    {% endfor %} {% else %} There are no users matching your search. <br />
+    {% endif %}
+    <br />
+  </div>
+
+  <div class="postsearch">
+    <h3>Posts</h3>
+    {% if posts %} {% for post, user in posts %}
+    <div class="border_p" style="border-radius: 10px; padding: 5px">
+      <small
+        ><a
+          href="/profile/{{user.id}}"
+          style="color: #6e8898; text-decoration: none"
+          >{{ user.first_name }} {{ user.last_name }}</a
+        ></small
+      >
+      <p>{{ post.data }}</p>
+      {% if current_user.id == post.user_id %}
+      <!-- Handle specific condition here -->
+      {% else %}
+      <!-- Handle other condition here -->
+      {% endif %}
+      <form
+        action="/post/{{post.id}}/like"
+        method="post"
+        style="display: inline"
+      >
+        <input type="submit" class="btn btn-outline-like btn-sm" value="🤍" />
+        <p style="display: inline">{{ post.likes | count }}</p>
+      </form>
+    </div>
+    <br />
+    {% endfor %} {% else %} There are no posts matching your search. {% endif %}
+  </div>
 </div>
-  
-</div>
+
 {% endblock %}

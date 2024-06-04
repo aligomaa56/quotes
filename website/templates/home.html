@@ -1,27 +1,10 @@
 {% extends "base.html" %}
+
 {% block body %}
 <div class="container">
-  <!-- <form action="" method="post" class="custom-search-form">
-    <div class="input-group mb-3 custom-search-group">
-      <input
-        type="text"
-        class="form-control custom-search-input"
-        aria-label="Search"
-        aria-describedby="button-addon2"
-        name="search"
-      />
-      <button
-        class="btn custom-search-button"
-        type="submit"
-        id="button-addon2"
-      >
-        Search
-      </button>
-    </div>
-  </form> -->
-
   {% for post, user in posts %}
   <div class="border">
+    <!-- User Profile Picture -->
     <a href="/profile/{{user.id}}">
       <img
         src="../static/images/{{user.profile_picture}}"
@@ -30,15 +13,19 @@
         style="margin-right: 5px; border-radius: 50%; width: 30px;"
       />
     </a>
+
+    <!-- User Full Name -->
     <a href="/profile/{{user.id}}" style="color: #020202; text-decoration: none;">
       {{ user.first_name }} {{ user.last_name }}
     </a>
 
-    <p class="post-data" >{{ post.data }}</p>
-    <!-- Liking Post -->
+    <!-- Post Data -->
+    <p class="post-data">{{ post.data }}</p>
+
+    <!-- Liking Post Form -->
     <form action="/post/{{post.id}}/like" method="post" class="like">
       <button type="submit" class="btn btn-outline-dark btn-sm">🤍</button>
-      <p style="display: inline"> {{ post.likes | count }}</p>
+      <p style="display: inline">{{ post.likes | count }}</p>
     </form>
   </div>
   <br />

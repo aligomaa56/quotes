@@ -1,13 +1,25 @@
-{% extends 'base.html' %}
-{% block body %}
+{% extends 'base.html' %} {% block body %}
 <div class="container">
-  <h2>Create a New Post</h2>
   <div class="container">
     <!-- FORM -->
     <form method="post">
-      <textarea name="post" cols="30" rows="10" class="form-control" placeholder="Write a post here..." maxlength="10000" required></textarea>
+      <!-- Textarea for user input -->
+      <textarea
+        name="post"
+        cols="30"
+        rows="10"
+        class="form-control"
+        placeholder="Write a post here..."
+        maxlength="10000"
+        required
+      ></textarea>
       <br />
-      <input type="submit" value="Create Post" class="form-control btn btn-primary" />
+      <!-- Submit button to create the post -->
+      <input
+        type="submit"
+        value="Create Post"
+        class="form-control btn btn-primary"
+      />
     </form>
   </div>
 </div>

@@ -1,76 +1,88 @@
-.profile_container{
-    width: 80%;
-    margin: auto;
-}
-.btn-secondary, .btn-primary{
-    background-color: #08606b;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 2px;
-    border-color: beige;
-}
-.btn-secondary:hover, .btn-primary:hover{
-    background-color: beige;
-    color: black;
-    font-weight: bolder;
-}
-.btn-primary{
-    width: 400px;
-    margin-left: 500px;
-}
-.btn-secondary{
-    margin-left: 770px;
-    margin-top: -150px;
-}
-textarea#po{
-    width: 400px;
-    margin-left: 500px;
-    margin-top: -150px;
-
-}
-.name{
-    font-size: x-large;
-    margin-left: 30px;
-    font-weight: bold;
-    font-family: "Arial BlacK", sans-serif;
+.profile_container {
+  width: 80%;
+  margin: auto;
 }
 
-.h4{
-    margin-left: 700px;
+.btn-secondary,
+.btn-primary {
+  background-color: #08606b;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 2px;
+  border-color: beige;
 }
-.border_p{
-    width: 400px;
-    margin-left: 500px;
-    background-color: rgb(248, 253, 255);
-    padding: 10px;
-    
-}
-.p{
-    justify-content: center;
-    display: flex;
-}
-.btn-outline-like{
-    background-color: #427785;
-    margin-left: 220px;
-}
-.btn-warning{
-    margin-left: 10px;
-    background-color: #427785;
-    border-color: beige;
-}
-.date{
 
-    margin-left: 30px;
+.btn-secondary:hover,
+.btn-primary:hover {
+  background-color: beige;
+  color: black;
+  font-weight: bolder;
 }
-.bio{
-    margin-left: 20px;
+
+.btn-primary {
+  width: 400px;
+  margin-left: 500px;
 }
-.bio-content{
-    background-color: beige;
-    padding: 10px;
-    width: 300px;
-    border-radius: 10px;
-    margin-left: 0px;
+
+.btn-secondary {
+  margin-left: 770px;
+  margin-top: -150px;
+}
+
+textarea#po {
+  width: 400px;
+  margin-left: 500px;
+  margin-top: -150px;
+}
+
+.name {
+  font-size: x-large;
+  margin-left: 30px;
+  font-weight: bold;
+  font-family: "Arial BlacK", sans-serif;
+}
+
+.h4 {
+  margin-left: 700px;
+}
+
+.border_p {
+  width: 400px;
+  margin-left: 500px;
+  background-color: rgb(248, 253, 255);
+  padding: 10px;
+}
+
+.p {
+  justify-content: center;
+  display: flex;
+}
+
+.btn-outline-like {
+  background-color: #427785;
+  margin-left: 220px;
+}
+
+.btn-warning {
+  margin-left: 10px;
+  background-color: #427785;
+  border-color: beige;
+}
+
+.date {
+  margin-left: 30px;
+}
+
+.bio {
+  margin-left: 20px;
+}
+
+.bio-content {
+  background-color: beige;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  margin-left: 0px;
 }

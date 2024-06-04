@@ -1,50 +1,54 @@
-{% extends 'base.html' %} {% block body %}
+{% extends 'base.html' %}
+
+{% block body %}
+<br><br>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/profilepic.css') }}">
 
 <div class="pcontainer">
   <div class="pic">
-  </form>
-  <br /><br /><br />
-  <h3>Your Profile Photo</h3>
-  {% if user.profile_picture %}
-  <img
-    src="/static/images/{{user.profile_picture}}"
-    alt="Avatar Image"
-    style="border-radius: 50%; width: 150px; height: 150px"
-  />
+    <!-- Display the user's profile picture if it exists -->
+    {% if user.profile_picture %}
+    <img
+      src="/static/images/{{user.profile_picture}}"
+      alt="Avatar Image"
+      style="border-radius: 50%; width: 150px; height: 150px"
+    />
+    {% else %}
+    <!-- Display a default profile picture if the user does not have one -->
+    <img
+      src="/static/images/default_profile_photo.jpg"
+      alt="Avatar Image"
+      style="border-radius: 50%; width: 150px; height: 150px"
+    />
+    {% endif %}
   </div>
+
   <div class="edit">
     <form
-    action="/edit/profile/{{user.id}}/images/"
-    method="post"
-    enctype="multipart/form-data"
-  >
-    <input
-      type="file"
-      id="img"
-      name="profile_picture"
-      accept="image/*"
-      class="form-control"
-    />
-    <br />
-    <input type="submit" class="btn btn-primary form-control" />
-  
+      action="/edit/profile/{{user.id}}/images/"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <!-- Allow the user to upload a new profile picture -->
+      <input
+        type="file"
+        id="img"
+        name="profile_picture"
+        accept="image/*"
+        class="form-control"
+      />
+      <br />
+      <input type="submit" class="btn btn-primary form-control" />
+    </form>
   </div>
+
   <div class="remove">
+    <!-- Allow the user to remove their profile picture -->
     <a
-    href="/edit/profile/{{user.id}}/remove_profile_picture/"
-    class="btn btn-sm btn-outline-primary"
-    >Remove Profile Photo</a
-  >
+      href="/edit/profile/{{user.id}}/remove_profile_picture/"
+      class="btn btn-sm btn-outline-primary"
+    >Remove Profile Photo</a>
   </div>
-  
-  {% else %}
-  <img
-    src="/static/images/default_profile_photo.jpg"
-    alt="Avatar Image"
-    style="border-radius: 50%; width: 150px; height: 150px"
-  />
-  {% endif %}
 </div>
 
 {% endblock %}
