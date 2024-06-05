@@ -1,15 +1,24 @@
 # Quotes Website
 
 Welcome to Quotes - Inspiring Words for All! This website is designed to be a platform where users can explore and share their favorite quotes with a global community. Whether you're looking for motivation, wisdom, or just a bit of inspiration, Quotes has you covered.
+
 ## Technologies Used
-- Python
-- Flask
-- MySQL
-- SQLAlchemy
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
+
+- **Python** <img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python" width="40" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **Flask** <img src="https://flask.palletsprojects.com/en/2.0.x/_images/flask-logo.png" alt="Flask" width="32" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **MySQL** <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL" width="32" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **SQLAlchemy** <img src="https://www.sqlalchemy.org/img/sqla_logo.png" alt="SQLAlchemy" width="70" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **HTML** <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" width="25" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **CSS** <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" width="20" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **JavaScript** <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="25" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
+
+- **Bootstrap** <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo-shadow.png" alt="Bootstrap" width="32" style="vertical-align: middle; margin-left: 10px; border-radius: 50%;">
 
 ## Key Features
 
@@ -17,7 +26,7 @@ Welcome to Quotes - Inspiring Words for All! This website is designed to be a pl
 Sign up easily and start your journey to explore and share inspiring quotes with a global community.
 ![alt text](landpage/static/images/signup.png)
 
-### Post a Quote
+### Post a Quo
 Share your favorite quotes or original thoughts with the community, and inspire others with your words.
 ![alt text](landpage/static/images/createpost.png)
 
@@ -25,7 +34,7 @@ Share your favorite quotes or original thoughts with the community, and inspire 
 Search with the name of your favorite writer, user, or specific word to discover quotes that resonate with you.
 ![alt text](landpage/static/images/search.png)
 
-### Like a Quote
+### Like a Quo
 Engage with the community by liking quotes that resonate with you, and discover what others are appreciating.
 ![alt text](landpage/static/images/like.png)
 
