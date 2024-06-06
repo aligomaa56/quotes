@@ -89,6 +89,10 @@ Quotes was founded by Ali Gomaa and Gehad Gamal, driven by a shared passion for 
 5. Run the Flask application using `python app.py`.
 6. Access the website in your browser.
 
+## Deploy link:
+https://quo.pythonanywhere.com/
+
+
 Feel free to explore the codebase and contribute to its development!
 
 &copy; 2024 Quotes. All rights reserved.
